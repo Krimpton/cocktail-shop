@@ -1,34 +1,29 @@
-import { useState } from "react";
+import { NavBar } from "../components /NavBar.tsx";
+import { Hero } from "../components /Hero";
+import { CocktailCarousel } from "../components /Carousel.tsx";
+import { AddOffers } from "../components /AddOffers.tsx";
+import { Reviews } from "../components /Reviews";
+import { Footer } from "../components /Footer";
 
-/**
- * HomePage — это React-компонент (страница)
- * Он:
- * 1) хранит данные (state)
- * 2) реагирует на действия пользователя
- * 3) возвращает HTML (JSX)
- */
 export function HomePage() {
-  // STATE — данные, которые могут меняться
-  const [search, setSearch] = useState("");
-  const [count, setCount] = useState(0);
-
   return (
-    <div style={{ padding: 20, fontFamily: "Arial" }}>
-      <h1>Cocktail Shop</h1>
+    <>
+      <NavBar />
+      <Hero />
 
-      {/* INPUT — управляемый компонент */}
-      <input
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        placeholder="Type something..."
-      />
+      <section id="cocktails">
+        <CocktailCarousel />
+      </section>
 
-      <p>You typed: <b>{search}</b></p>
+      <section id="sets">
+        <AddOffers />
+      </section>
 
-      {/* BUTTON — меняет state */}
-      <button onClick={() => setCount(count + 1)}>
-        Clicked {count} times
-      </button>
-    </div>
+      <section id="reviews">
+        <Reviews />
+      </section>
+
+      <Footer />
+    </>
   );
 }

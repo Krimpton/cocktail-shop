@@ -1,0 +1,398 @@
+/* =====================
+   VARIABLES
+===================== */
+:root {
+  --dark-main: #1e202c;
+  --violet-accent: #8324af;
+  --dark-card: #31323c;
+  --light-text: #bfc0d1;
+}
+
+/* =====================
+   GLOBAL
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+
+  background: var(--dark-main);
+  color: var(--light-text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: "Manrope", sans-serif;
+}
+
+/* =====================
+   NAVIGATION
+===================== */
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(30, 32, 44, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #2a2c3a;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo a {
+  color: var(--light-text);
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--light-text);
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--violet-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-icon {
+  background: none;
+  border: none;
+  color: var(--light-text);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.nav-icon:hover {
+  color: var(--violet-accent);
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 32, 44, 0.65);
+}
+
+.hero-overlay {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.hero-overlay h3 {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.hero-overlay p {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+}
+
+.btn-primary {
+  background: var(--violet-accent);
+  color: var(--light-text);
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #7263b7;
+}
+
+/* =====================
+   SECTION TITLES
+===================== */
+.section-title {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  font-size: 2rem;
+}
+
+/* ==================================================
+   3D CAROUSEL (MAIN FEATURE)
+================================================== */
+
+
+/* SECTION */
+
+.carousel-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+/* WRAPPER */
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CAROUSEL */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 360px;
+}
+
+/* CARD */
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 220px;
+  height: 320px;
+  background: var(--dark-card);
+  border-radius: 18px;
+  overflow: hidden;
+  transform: translateX(-50%) scale(0.7);
+  opacity: 1;
+  transition: all 0.5s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* IMAGE */
+
+.carousel-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* TITLE */
+
+.carousel-item h3 {
+  margin: 12px;
+  font-size: 16px;
+}
+
+/* POSITIONS */
+
+/* POSITIONS (symmetrical) */
+
+.pos-center {
+  transform: translateX(-50%) translateY(-6px) scale(1.12) rotate(0deg);
+  opacity: 1;
+  z-index: 6;
+  filter: saturate(1.05) brightness(1.05);
+}
+
+.pos-left-1 {
+  transform: translateX(calc(-50% - 240px)) translateY(10px) scale(0.98) rotate(-6deg);
+  opacity: 0.92;
+  z-index: 5;
+  filter: blur(0.2px) brightness(0.95);
+  animation: floaty 4.2s ease-in-out infinite;
+}
+
+.pos-right-1 {
+  transform: translateX(calc(-50% + 240px)) translateY(18px) scale(0.98) rotate(7deg);
+  opacity: 0.92;
+  z-index: 5;
+  filter: blur(0.2px) brightness(0.95);
+  animation: floaty 4.6s ease-in-out infinite;
+}
+
+.pos-left-2 {
+  transform: translateX(calc(-50% - 460px)) translateY(-4px) scale(0.84) rotate(10deg);
+  opacity: 0.65;
+  z-index: 4;
+  filter: blur(0.6px) brightness(0.85);
+}
+
+.pos-right-2 {
+  transform: translateX(calc(-50% + 460px)) translateY(-12px) scale(0.84) rotate(-11deg);
+  opacity: 0.65;
+  z-index: 4;
+  filter: blur(0.6px) brightness(0.85);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.6);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.carousel {
+  perspective: 1200px;
+}
+
+.carousel-item {
+  transform-style: preserve-3d;
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1),
+  opacity 500ms ease,
+  filter 500ms ease;
+  filter: saturate(0.95);
+}
+
+/* маленькое "дыхание" для боковых */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* NAV BUTTONS */
+
+.nav-btn {
+  background: var(--violet-accent);
+  color: white;
+  border: none;
+  font-size: 28px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav-btn:hover {
+  background: #7a6bc2;
+}
+
+/* =====================
+   ADDITIONAL PRODUCTS
+===================== */
+.additional-products {
+  background: #191a24;
+  padding: 4rem 2rem;
+}
+
+.products-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: var(--dark-card);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover {
+  background: var(--violet-accent);
+  transform: translateY(-6px);
+}
+
+/* =====================
+   REVIEWS
+===================== */
+.reviews {
+  padding: 4rem 2rem;
+}
+
+.review-card {
+  max-width: 520px;
+  margin: auto;
+  background: var(--dark-card);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.site-footer {
+  background: #14151d;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.socials a {
+  color: var(--light-text);
+  margin: 0 0.6rem;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  color: var(--violet-accent);
+}
