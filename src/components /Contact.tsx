@@ -1,20 +1,20 @@
-const reviews = [
+const contact = [
   { text: "“A very stylish and delicious experience”", author: "Anna" },
   { text: "“A very stylish and delicious experience”", author: "Anna" },
   { text: "“A very stylish and delicious experience”", author: "Anna" },
   { text: "“A very stylish and delicious experience”", author: "Anna" },
 ];
 
-export function Reviews() {
+export function Contact() {
   return (
-    <section id="reviews" className="reviews">
-      <h2 className="section-title">Reviews</h2>
+    <section id="contact" className="contact">
+      <h2 className="section-title">Contact</h2>
 
-      {reviews.map((r, i) => (
-        <div className="reviews-container" key={i}>
-          <div className="review-card">
-            <p>{r.text}</p>
-            <span>— {r.author}</span>
+      {contact.map((c, i) => (
+        <div className="contact-container" key={i}>
+          <div className="contact-card">
+            <p>{c.text}</p>
+            <span>— {c.author}</span>
           </div>
         </div>
       ))}

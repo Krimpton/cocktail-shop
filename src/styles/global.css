@@ -1,3 +1,6 @@
+
+
+
 @charset "UTF-8";
 /* =====================
    VARIABLES
@@ -62,6 +65,9 @@ h1, h2, h3 {
   text-decoration: none;
   text-transform: uppercase;
 }
+
+
+
 
 .nav-links {
   list-style: none;
@@ -387,4 +393,6 @@ h1, h2, h3 {
   color: var(--violet-accent);
 }
 
-/*# sourceMappingURL=global.css.map */
+/* # sourceMappingURL=global.css.map */
+
+

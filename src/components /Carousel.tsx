@@ -36,11 +36,11 @@ export function CocktailCarousel() {
 
   return (
     <section className="carousel-section" id="cocktails">
-      <h2 className="section-title">Our Cocktails</h2>
+      <h2 className="section-title">Our Cocktail Boxes</h2>
 
       <div className="carousel-wrapper">
         <button className="nav-btn" onClick={prev} type="button" aria-label="Previous">
-          ‹
+          <img src="../public/assets/icons/arrow_left.svg" alt="" />
         </button>
 
         <div className="carousel">
@@ -54,12 +54,13 @@ export function CocktailCarousel() {
             >
               <img src={c.image} alt={c.name} />
               <h3>{c.name}</h3>
+              <p>{c.price}</p>
             </div>
           ))}
         </div>
 
         <button className="nav-btn" onClick={next} type="button" aria-label="Next">
-          ›
+          <img src="../public/assets/icons/arrow_right.svg" alt="" />
         </button>
       </div>
     </section>

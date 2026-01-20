@@ -2,7 +2,7 @@ import { NavBar } from "../components /NavBar.tsx";
 import { Hero } from "../components /Hero";
 import { CocktailCarousel } from "../components /Carousel.tsx";
 import { AddOffers } from "../components /AddOffers.tsx";
-import { Reviews } from "../components /Reviews";
+import { Contact } from "../components /Contact.tsx";
 import { Footer } from "../components /Footer";
 
 export function HomePage() {
@@ -19,8 +19,8 @@ export function HomePage() {
         <AddOffers />
       </section>
 
-      <section id="reviews">
-        <Reviews />
+      <section id="contact">
+        <Contact />
       </section>
 
       <Footer />
