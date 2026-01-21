@@ -83,13 +83,17 @@ h2, h3 {
   gap: 2rem;
 }
 
-.nav-links a {
-  color: var(--light-text);
-  text-decoration: none;
-  position: relative;
+.nav-links .nav-link {
+  background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    font: inherit;
+    text-decoration: none;
+    position: relative;
 }
 
-.nav-links a::after {
+.nav-links .nav-link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -100,7 +104,7 @@ h2, h3 {
   transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links .nav-link:hover::after {
   width: 100%;
 }
 
@@ -121,6 +125,7 @@ h2, h3 {
   color: var(--violet-accent);
   transition: 0.3s ease;
 }
+
 
 /* =====================
    HERO
@@ -183,13 +188,9 @@ h2, h3 {
   transition: background 0.3s ease;
   border-image: linear-gradient(135deg,
         rgba(116, 44, 118, 0.058),
-        /* верхній лівий — майже прозорий */
         #8324af 40%,
-        /* основний колір */
         #8324af 60%,
-        /* основний колір */
         rgba(116, 44, 118, 0.058)
-        /* нижній правий — майже прозорий */
       ) 1;
 }
 
@@ -453,7 +454,6 @@ h2, h3 {
 }
 
 
-
 /* =====================
    CONTACT SECTION
 ===================== */
@@ -564,7 +564,7 @@ h2, h3 {
 }
 
 /* =====================
-   BUTTON
+|| BUTTON
 ===================== */
 
 .contact-button {
@@ -593,16 +593,48 @@ h2, h3 {
   transform: translateY(-2px);
 }
 
+
 // /* =====================
-//    RESPONSIVE
+//    COURSES GRID
 // ===================== */
 
-// @media (max-width: 900px) {
-//   .contact-container {
-//     grid-template-columns: 1fr;
-//   }
+.courses-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
 
-//   .contact-image {
-//     height: 180px;
-//   }
-// }
+.course-card {
+  background: var(--dark-card);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.course-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
