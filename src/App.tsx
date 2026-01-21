@@ -1,3 +1,4 @@
+//import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
 
 export default function App() {
