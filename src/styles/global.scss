@@ -195,7 +195,7 @@ h2, h3 {
 }
 
 .btn-primary:hover {
-  background: #7263b771;
+  background: #7263b748;
 }
 
 /* =====================
@@ -354,6 +354,10 @@ h2, h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
+}
+.products-grid a {
+  text-decoration: none;
+  color: var(--light-text);
 }
 
 .product-card {
@@ -597,6 +601,9 @@ h2, h3 {
 // /* =====================
 //    COURSES GRID
 // ===================== */
+.courses-page {
+  padding: 4rem 2rem;
+}
 
 .courses-grid {
   max-width: 1200px;
@@ -607,6 +614,7 @@ h2, h3 {
 }
 
 .course-card {
+  height: 480px;
   background: var(--dark-card);
   border-radius: 16px;
   overflow: hidden;
@@ -616,25 +624,149 @@ h2, h3 {
 
 .course-card img {
   width: 100%;
-  height: 180px;
+  height: 230px;
   object-fit: cover;
 }
 
 .favorite-btn {
+  font-size: 2rem;
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
   font-size: 1.2rem;
   color: white;
 }
 
+.course-card__content {
+  padding: 1rem;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+.course-card__content hr {
+  border: none;
+  border-top: 0.1rem solid var(--violet-accent);
+  margin-bottom: 1.5rem;
+}
+
+.course-card__content h3 {
+  margin-bottom: 0.5rem;
+  color: var(--violet-accent);
+}
+
+.course-card__content p {
+  font-size: 0.90rem;
+  color: #b0b0b0;
+  margin-bottom: 2rem;
+}
+
+.course-card__footer {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+.course-card__footer span {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.767);
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.modal {
+  position: relative;
+  pointer-events: initial;
+  background: var(--dark-card);
+  width: 800px;
+  padding: 20px;
+  border-radius: 0.5em;
+}
+
+.modal-overlay img {
+  border: 1px solid var(--violet-accent);
+  width: auto;
+  height: 400px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.modal h2 {
+  margin: 1rem;
+  color: var(--violet-accent);
+  
+}
+
+.modal-overlay .favorite-btn {
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem;
+}
+
+.quantity button {
+  background: var(--violet-accent);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-actions .btn-primary {
+  width: 300px;
+} 
+
+.modal-actions .favorite-btn {
+  margin-left: 35px;
+  margin-bottom: 3rem;
+}
+
+.modal-description {
+  margin: 0 auto;
+  width: 70%;
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-bottom: 2rem;
+  
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
 }

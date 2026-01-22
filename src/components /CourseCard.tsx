@@ -13,6 +13,7 @@ export function CourseCard({ course, onClick }: Props) {
       <button className="favorite-btn">♡</button>
 
       <div className="course-card__content">
+        <hr />
         <h3>{course.title}</h3>
         <p>{course.description}</p>
 
