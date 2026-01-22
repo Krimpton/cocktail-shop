@@ -1,23 +1,25 @@
-import type { Course } from "../data/courses.tsx";   //"verbatimModuleSyntax": true -> type {}
+import type { Cocktail } from "../data/cocktails.tsx"; // type-only import
 import { useState } from "react";
 
 interface Props {
-  course: Course;
+  cocktail: Cocktail;
   onClose: () => void;
 }
 
-export function CourseModal({ course, onClose }: Props) {
+export function CocktailModal({ cocktail, onClose }: Props) {
   const [quantity, setQuantity] = useState(1);
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
+        
         <button className="modal-close" onClick={onClose}>✕</button>
 
-        <img src={course.image} alt={course.title} />
+        <img src={cocktail.image} alt={cocktail.name} />
 
-        <h2>{course.title}</h2>
-        <p className="price">${course.price}</p>
+        
+        <h2>{cocktail.name}</h2>
+        <p className="price">{cocktail.price}</p>
 
         <div className="quantity">
           <button onClick={() => setQuantity(q => Math.max(1, q - 1))}>−</button>
@@ -30,12 +32,13 @@ export function CourseModal({ course, onClose }: Props) {
           <button className="favorite-btn active">♥</button>
         </div>
 
-        <p>
-          During our 2-hour course, you will stand behind the bar of a real cocktail bar <br />
-          and mix three fantastic, modern and incredibly delicious drinks yourself. <br />
-          Our instructor will show you everything you need to know, explain the recipes <br />
-          and ingredients, and you'll even learn a few cool tricks to impress your friends.
-        </p>
+        <ul className="modal-description">
+          <p>One cocktail box holds:</p>
+          {cocktail.description.map((line, index) => (
+            <li key={index}>{line}</li>
+          ))}
+          <p>Attached is a cocktail recipe with a QR code <br></br>to view the full video with explanations.</p>
+        </ul>
       </div>
     </div>
   );
