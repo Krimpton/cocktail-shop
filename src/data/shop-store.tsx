@@ -84,14 +84,14 @@ type ShopContextValue = {
   favorites: ShopState["favorites"];
   cart: ShopState["cart"];
 
-  toggleFavorite: (id: string) => void;
+  toggleFavorite: (id: number) => void;
   isFavorite: (id: string) => boolean;
 
-  addToCart: (id: string, qty?: number) => void;
+  addToCart: (id: number, qty?: number) => void;
   removeFromCart: (id: string) => void;
 
-  incQty: (id: string) => void;
-  decQty: (id: string) => void;
+  incQty: (id: number) => void;
+  decQty: (id: number) => void;
 
   getQty: (id: string) => number;
   cartCount: number;

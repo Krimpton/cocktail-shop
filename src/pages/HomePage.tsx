@@ -12,21 +12,25 @@ export function HomePage() {
   const location = useLocation();
 
   useEffect(() => {
-    if (!location.hash) return; //Skip scrolling if URL doesn’t contain a #anchor
+    if (!location.hash) return;
 
-    const id = location.hash.substring(1);
+    const id = location.hash.slice(1);
+    const el = document.getElementById(id);
 
-    // Check for element every 20ms until it exists, then scroll smoothly
-    const interval = setInterval(() => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" }); //Scroll the page to this element with a smooth animation
-        clearInterval(interval);
-      }
-    }, 20); //20ms
+    // Если элемент уже есть — скроллим сразу
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
 
-    return () => clearInterval(interval);
-  }, [location]);
+    // Если элемента ещё нет — пробуем после рендера
+    const t = window.setTimeout(() => {
+      const el2 = document.getElementById(id);
+      if (el2) el2.scrollIntoView({ behavior: "smooth" });
+    }, 0);
+
+    return () => window.clearTimeout(t);
+  }, [location.hash]);
 
   return (
     <>
