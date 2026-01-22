@@ -18,9 +18,9 @@ export function Footer() {
         <img src="../public/assets/icons/dhl_70_48.png"></img>
       </div>
       <div className="socials">
-        <a href="#"><img src="../public/assets/icons/Instagram - Negative.png"></img></a>
-        <a href="#"><img src="../public/assets/icons/Facebook - Negative.png"></img></a>
-        <a href="#"><img src="../public/assets/icons/YouTube - Negative.png"></img></a>
+        <a href="https://www.instagram.com/digitalcareerinstitute/?hl=en"><img src="../public/assets/icons/Instagram - Negative.png"></img></a>
+        <a href="https://www.facebook.com/digitalcareerinstitute/"><img src="../public/assets/icons/Facebook - Negative.png"></img></a>
+        <a href="https://www.youtube.com/channel/UCwV2E1eA71nxONY6ZLswpnw"><img src="../public/assets/icons/YouTube - Negative.png"></img></a>
       </div>
 
         <p>© 2026 Cocktail Box. All rights reserved.</p>
