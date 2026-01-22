@@ -291,7 +291,7 @@ h2, h3 {
 }
 
 .pos-left-1 {
-  transform: translateX(-390px) scale(0.95);
+  transform: translateX(-400px) scale(0.95);
   opacity: 0.9;
   z-index: 4;
 }
@@ -303,7 +303,7 @@ h2, h3 {
 }
 
 .pos-left-2 {
-  transform: translateX(-550px) scale(0.8);
+  transform: translateX(-560px) scale(0.8);
   opacity: 0.6;
   z-index: 3;
 }
@@ -617,7 +617,7 @@ h2, h3 {
   height: 480px;
   background: var(--dark-card);
   border-radius: 16px;
-  overflow: hidden;
+  overflow: hidden; 
   cursor: pointer;
   position: relative;
 }
@@ -635,8 +635,12 @@ h2, h3 {
   right: 20px;
   background: none;
   border: none;
-  font-size: 1.2rem;
-  color: white;
+  color: var(--violet-accent);
+}
+
+.favorite-btn:hover {
+  color: var(--light-text);
+  transition: 0.5s;
 }
 
 .course-card__content {
@@ -733,7 +737,6 @@ h2, h3 {
   cursor: pointer;
 }
 
-
 .modal-actions {
   display: flex;
   flex-direction: column;
@@ -748,17 +751,26 @@ h2, h3 {
 
 .modal-actions .favorite-btn {
   margin-left: 35px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .modal-description {
   margin: 0 auto;
   width: 70%;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #b0b0b0;
-  margin-bottom: 2rem;
-  
 }
+
+ .modal-description li {
+  padding: 0.1rem;
+  list-style: none;
+ }
+ 
+ .modal-description p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 1rem;
+ }
 
 .modal-close {
   position: absolute;

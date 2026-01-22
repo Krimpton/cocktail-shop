@@ -12,18 +12,18 @@ export function HomePage() {
   const location = useLocation();
 
   useEffect(() => {
-    if (!location.hash) return;
+    if (!location.hash) return; //Skip scrolling if URL doesn’t contain a #anchor
 
     const id = location.hash.substring(1);
 
-    // Перевіряємо DOM через невеликий інтервал
+    // Check for element every 20ms until it exists, then scroll smoothly
     const interval = setInterval(() => {
       const el = document.getElementById(id);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+        el.scrollIntoView({ behavior: "smooth" }); //Scroll the page to this element with a smooth animation
         clearInterval(interval);
       }
-    }, 20);
+    }, 20); //20ms
 
     return () => clearInterval(interval);
   }, [location]);
